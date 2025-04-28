@@ -1,0 +1,45 @@
+// import { test } from "@playwright/test";
+// import { parse } from "csv-parse/sync";
+// import fs from "fs";
+// const csvdata=parse(fs.readFileSync('testdata/data.csv'),{
+//   columns:true,
+//   skip_empty_lines:true,
+//   skip_records_with_empty_values:true
+// })
+
+// for (let i = 9; i < csvdata.length; i++) {
+
+// test('has title'+i, async ({ page }) => {
+
+// await page.goto('https://www.youtube.com/watch?v=r6m1TilR0eU');
+// await page.locator("//button[@aria-label='Pause (k)']").click();
+// await page.locator("//*[text()='Subscribe']").click();
+// await page.getByLabel("Sign in").first().click();
+// await page.getByText("Create account").click()
+// await page.waitForTimeout(5000);
+// await page.getByLabel("First name").first().fill(csvdata[i].FN);
+// await page.getByLabel("Last name (optional)").first().fill(csvdata[i].LN);
+// await page.getByText("Next").click()
+// await page.locator("//*[@id='month']").selectOption({index: 1});
+// await page.locator("//*[@id='gender']").selectOption({index: 1});
+// await page.getByLabel("Day").fill("5");
+// await page.getByLabel("Year").fill("1989");
+// await page.getByText("Next").first().click()
+// await page.getByText("Get a Gmail address instead").click()
+// await page.locator("//*[text()='Create your own Gmail address']/parent::div").click()
+// await page.getByLabel("Create a Gmail address").fill(csvdata[i].EMAIL);
+// await page.getByText("Next").first().click()
+// await page.getByLabel("Password",{exact:true}).fill(csvdata[i].PWD);
+// await page.getByLabel("Confirm",{exact:true}).fill(csvdata[i].PWD);
+// await page.getByText("Next").first().click()
+// await page.waitForTimeout(5000);
+
+// // await page.getByText("Next").first().click()
+
+// // await page.getByLabel("Password").fill(csvdata[i].PWD);
+// // await page.getByLabel("Coonfirm").fill(csvdata[i].PWD);
+// // await page.getByText("Next").first().click()
+// await page.waitForTimeout(10000000)
+
+// });
+// }
