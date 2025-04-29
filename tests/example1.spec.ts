@@ -8,6 +8,6 @@ const skipbutton=await page.locator("//*[text()='Skip']").isVisible()
 if(skipbutton){
 await page.locator("//button[@aria-label='Pause (k)']").click();
 }
-await page.waitForTimeout(20000)
+await page.waitForTimeout(30000)
 await page.close()
 });

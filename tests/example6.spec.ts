@@ -1,12 +1,11 @@
 import { test, expect, chromium } from '@playwright/test';
 
 test('Google search automation - SenthilSmartQaHub', async ({ }) => {
-
+//  '--start-maximized',
     const browser = await chromium.launch({
-        headless: true, // not headless
+        headless: false, // not headless
         args: [
           '--disable-blink-features=AutomationControlled',
-          '--start-maximized',
         ],
       });
       const context = await browser.newContext({});
@@ -19,7 +18,7 @@ test('Google search automation - SenthilSmartQaHub', async ({ }) => {
   await searchInput.press('Enter');
 
   // Wait for results to appear
-  await page.waitForTimeout(5000);
+  await page.waitForTimeout(2000);
 
 
 const location=await page.locator("//*[text()='Not now']").first().isVisible()
@@ -37,7 +36,7 @@ if(location){
   await expectedLink.first().click();
 
   // Wait for page to load fully
-  await page.waitForTimeout(5000); // Keep a reasonable wait
+  await page.waitForTimeout(2000); // Keep a reasonable wait
 
 
   await page.locator("//*[text()='Course Topics']").first().click();
