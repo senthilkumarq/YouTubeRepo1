@@ -19,7 +19,7 @@ on:
 
 jobs:
   playwright-tests:
-    timeout-minutes: 60
+    timeout-minutes: 20
     runs-on: windows-latest
     strategy:
       fail-fast: false

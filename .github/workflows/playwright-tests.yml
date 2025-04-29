@@ -1,5 +1,9 @@
 name: Playwright Tests
 on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
   # pull_request:
   #   branches: [ main ]
   # Do not include `push` or `pull_request` triggers to avoid running on commits the it will executed only schedule base
