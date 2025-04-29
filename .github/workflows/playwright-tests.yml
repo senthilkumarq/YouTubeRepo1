@@ -12,7 +12,7 @@ on:
   #    minutes, hour, day of month(1 to 30), month(1 to 12), day of week(0 to 6)
 jobs:
   test:
-    timeout-minutes: 60
+    timeout-minutes: 10
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@v4
