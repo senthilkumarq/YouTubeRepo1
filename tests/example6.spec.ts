@@ -3,7 +3,7 @@ import { test, expect, chromium } from '@playwright/test';
 test('Google search automation - SenthilSmartQaHub', async ({ }) => {
 //  '--start-maximized',
     const browser = await chromium.launch({
-        headless: false, // not headless
+        headless: true, // not headless
         args: [
           '--disable-blink-features=AutomationControlled',
         ],
