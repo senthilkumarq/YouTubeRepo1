@@ -2,12 +2,13 @@ import { chromium, test } from "@playwright/test";
 
 test('has title', async ({}) => {
 
-    const browser = await chromium.launchPersistentContext('C:/senthil-profile', {
-        headless: false,
-        executablePath: 'C:/Program Files/Google/Chrome/Application/chrome.exe', // exact path to your local Chrome
+ const browser = await chromium.launchPersistentContext('C:/senthil-profile', {
+
+      //  executablePath: 'C:/Program Files/Google/Chrome/Application/chrome.exe', // exact path to your local Chrome
       });
     const page = await browser.newPage();
 await page.goto('https://www.google.com/');
+
 
 console.log('Filling search input...');
   const searchInput = page.locator('*[name="q"]');
@@ -17,8 +18,6 @@ console.log('Filling search input...');
 
   console.log('Waiting for search results...');
   await page.waitForLoadState('domcontentloaded')
-
-
 
   console.log('Checking for "Not now" prompt...');
   const location = await page.locator("//*[text()='Not now']").first().isVisible();
@@ -38,6 +37,7 @@ const skipbutton=await page.locator("//*[text()='Skip']").isVisible()
 if(skipbutton){
 await page.locator("//button[@aria-label='Pause (k)']").click();
 }
-await page.waitForTimeout(120000)
+await page.waitForTimeout(1200)
+await page.screenshot()
 await page.close()
 });
