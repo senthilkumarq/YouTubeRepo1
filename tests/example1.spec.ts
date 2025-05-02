@@ -12,7 +12,7 @@ await page.goto('https://www.google.com/');
 
 console.log('Filling search input...');
   const searchInput = page.locator('*[name="q"]');
-  await searchInput.fill('SenthilSmartQaHub');
+  await searchInput.pressSequentially('SenthilSmartQaHub');
   console.log('Submitting search...');
   await searchInput.press('Enter');
 
@@ -30,7 +30,11 @@ console.log('Filling search input...');
   }
 await page.locator("(//*[text()='YouTube']/following-sibling::span[text()=' SenthilSmartQAHub'])[2]").click();
 
+const play=await page.locator("//button[@aria-label='Pause (k)']").isVisible()
+if(play){
 await page.locator("//button[@aria-label='Pause (k)']").click();
+}
+
 
 await page.waitForTimeout(5000)
 const skipbutton=await page.locator("//*[text()='Skip']").isVisible()
