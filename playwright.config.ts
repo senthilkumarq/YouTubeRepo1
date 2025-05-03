@@ -33,13 +33,14 @@ export default defineConfig({
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on',
-    headless:true,
+    headless:false,
     video:'on',
 
     screenshot:'on',
     launchOptions: {
       args: ['--disable-blink-features=AutomationControlled'],
     },
+    baseURL: process.env.BASE_URL || 'http://localhost:3000',
   },
 
   /* Configure projects for major browsers */

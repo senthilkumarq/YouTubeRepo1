@@ -39,9 +39,9 @@ await page.locator("//button[@aria-label='Pause (k)']").click();
 await page.waitForTimeout(5000)
 const skipbutton=await page.locator("//*[text()='Skip']").isVisible()
 if(skipbutton){
-await page.locator("//button[@aria-label='Pause (k)']").click();
+await page.locator("//*[text()='Skip']").click();
 }
-await page.waitForTimeout(1200)
+await page.waitForTimeout(12000)
 await page.screenshot()
 await page.close()
 });
